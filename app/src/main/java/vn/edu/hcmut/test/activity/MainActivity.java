@@ -1,163 +1,68 @@
 package vn.edu.hcmut.test.activity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
-import android.util.Patterns;
-import android.view.KeyEvent;
 import android.view.View;
-import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
-import android.widget.TextView;
 
 import vn.edu.hcmut.test.R;
 
-
-public class MainActivity extends ActionBarActivity implements View.OnClickListener {
-
-    public static final String EXTRA_EDIT_MODE = "extra_edit_mode";
-    private boolean isEditMode;
-
-    private TextView txtError, txtTitle;
-    private TextView txtFirstName, txtLastName;
-    private TextView txtEmailAddress;
-    private TextView txtPassword, txtConfirmPassword;
-    private Button btnRegister;
+public class MainActivity extends Activity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
-        Intent intent = getIntent();
+        setContentView(R.layout.main_screen);
 
-        txtTitle = (TextView) findViewById(R.id.txtTitle);
-        txtError = (TextView) findViewById(R.id.txtError);
+        Button btnDemo1 = (Button) findViewById(R.id.btnDemo1);
+        btnDemo1.setOnClickListener(this);
 
-        txtFirstName = (TextView) findViewById(R.id.txtFirstName);
-        txtLastName = (TextView) findViewById(R.id.txtLastName);
+        Button btnDemo2 = (Button) findViewById(R.id.btnDemo2);
+        btnDemo2.setOnClickListener(this);
 
-        txtEmailAddress = (TextView) findViewById(R.id.txtEmailAddress);
+        Button btnDemo3 = (Button) findViewById(R.id.btnDemo3);
+        btnDemo3.setOnClickListener(this);
 
-        txtPassword = (TextView) findViewById(R.id.txtPassword);
-        txtConfirmPassword = (TextView) findViewById(R.id.txtConfirmPassword);
+        Button btnDemo4 = (Button) findViewById(R.id.btnDemo4);
+        btnDemo4.setOnClickListener(this);
 
-        txtConfirmPassword.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if (actionId == EditorInfo.IME_ACTION_DONE) {
-                    register();
-                    return true;
-                }
+        Button btnDemo5 = (Button) findViewById(R.id.btnDemo5);
+        btnDemo5.setOnClickListener(this);
 
-                return false;
-            }
-        });
-
-        btnRegister = (Button) findViewById(R.id.btnRegister);
-        btnRegister.setOnClickListener(this);
-
-        isEditMode = intent.hasExtra(EXTRA_EDIT_MODE);
-        if (isEditMode) {
-            String title = getString(R.string.title_edit_mode);
-            txtTitle.setText(title);
-
-            String firstName = intent.getStringExtra(InfoActivity.EXTRA_FIRST_NAME);
-            String lastName = intent.getStringExtra(InfoActivity.EXTRA_LAST_NAME);
-            String emailAddress = intent.getStringExtra(InfoActivity.EXTRA_EMAIL_ADDRESS);
-            txtFirstName.setText(firstName);
-
-            txtLastName.setText(lastName);
-            txtEmailAddress.setText(emailAddress);
-
-            String text = getString(R.string.btn_register_edit_mode);
-            btnRegister.setText(text);
-        }
+        Button btnDemo6 = (Button) findViewById(R.id.btnDemo6);
+        btnDemo6.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         int id = v.getId();
 
+        Class clazz = null;
+
         switch (id) {
-            case R.id.btnRegister:
-                register();
+            case R.id.btnDemo1:
+                clazz = ListView1Activity.class;
+                break;
+            case R.id.btnDemo2:
+                clazz = ListView2Activity.class;
+                break;
+            case R.id.btnDemo3:
+                clazz = ListViewActivity.class;
+                break;
+            case R.id.btnDemo4:
+                clazz = ListViewSaveActivity.class;
+                break;
+            case R.id.btnDemo5:
+                clazz = ListViewPrefActivity.class;
+                break;
+            case R.id.btnDemo6:
+                clazz = ClubActivity.class;
                 break;
         }
-    }
 
-    private void register() {
-        String firstName = txtFirstName.getText().toString().trim();
-        if (firstName.isEmpty()) {
-            showError(R.string.msg_enter_first_name);
-            txtFirstName.requestFocus();
-            return;
-        }
-
-        String lastName = txtLastName.getText().toString().trim();
-        if (lastName.isEmpty()) {
-            showError(R.string.msg_enter_last_name);
-            txtLastName.requestFocus();
-            return;
-        }
-
-        String emailAddress = txtEmailAddress.getText().toString().trim();
-        if (emailAddress.isEmpty()) {
-            showError(R.string.msg_enter_email_address);
-            txtEmailAddress.requestFocus();
-            return;
-        }
-
-        boolean emailValid = Patterns.EMAIL_ADDRESS.matcher(emailAddress).matches();
-        if (!emailValid) {
-            showError(R.string.msg_enter_email_address_invalid);
-            txtEmailAddress.requestFocus();
-            return;
-        }
-
-        String confirmPassword = txtConfirmPassword.getText().toString();
-        String password = txtPassword.getText().toString();
-        if (password.isEmpty() && (!isEditMode || !confirmPassword.isEmpty())) {
-            showError(R.string.msg_enter_password);
-            txtPassword.requestFocus();
-            return;
-        }
-
-        if ((!isEditMode || !password.isEmpty()) && !confirmPassword.equals(password)) {
-            showError(R.string.msg_password_not_match);
-            txtConfirmPassword.requestFocus();
-            return;
-        }
-
-        hideError();
-        btnRegister.requestFocus();
-
-        Intent intent = new Intent(this, InfoActivity.class);
-        intent.putExtra(InfoActivity.EXTRA_FIRST_NAME, firstName);
-        intent.putExtra(InfoActivity.EXTRA_LAST_NAME, lastName);
-        intent.putExtra(InfoActivity.EXTRA_EMAIL_ADDRESS, emailAddress);
-
-        if (!isEditMode || !password.isEmpty()) {
-            intent.putExtra(InfoActivity.EXTRA_PASSWORD, password);
-        }
-
-        if (isEditMode) {
-            setResult(RESULT_CANCELED, intent);
-        } else {
-            startActivity(intent);
-        }
-
-        finish();
-    }
-
-    private void showError(int stringId) {
-        String text = getString(stringId);
-        txtError.setText(text);
-        txtError.setVisibility(View.VISIBLE);
-    }
-
-    private void hideError() {
-        txtError.setText("");
-        txtError.setVisibility(View.GONE);
+        Intent intent = new Intent(this, clazz);
+        startActivity(intent);
     }
 }

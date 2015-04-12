@@ -17,7 +17,12 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.InfoActivity" />
+        <activity android:name=".activity.ListView1Activity" />
+        <activity android:name=".activity.ListViewActivity" />
+        <activity android:name=".activity.ListView2Activity" />
+        <activity android:name=".activity.ListViewPrefActivity" />
+        <activity android:name=".activity.ListViewSaveActivity" />
+        <activity android:name=".activity.ClubActivity" />
 
     </application>
 

@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Week 2</string>
-
-    <string name="msg_enter_first_name">Please enter First Name</string>
-    <string name="msg_enter_last_name">Please enter Last Name</string>
-    <string name="msg_enter_email_address">Please enter Email Address</string>
-    <string name="msg_enter_password">Please enter Password</string>
-    <string name="msg_password_not_match">Password not match</string>
-    <string name="msg_enter_email_address_invalid">Email Address invalid</string>
-    <string name="btn_register_edit_mode">Save</string>
-    <string name="title_edit_mode">Edit</string>
-    <string name="sign_up">Sign Up</string>
+    <string name="app_name">Test</string>
+    <string name="action_settings">Settings</string>
 
 </resources>
