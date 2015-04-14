@@ -11,10 +11,7 @@
         android:theme="@style/AppTheme">
 
         <activity android:name=".activity.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
 
         <activity android:name=".activity.ListView1Activity" />
@@ -23,6 +20,15 @@
         <activity android:name=".activity.ListViewPrefActivity" />
         <activity android:name=".activity.ListViewSaveActivity" />
         <activity android:name=".activity.ClubActivity" />
+
+        <activity android:name="vn.edu.hcmut.week3.AddNewScreen" />
+        <activity android:name="vn.edu.hcmut.week3.ViewScreen" />
+        <activity android:name="vn.edu.hcmut.week3.MainScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
     </application>
 
