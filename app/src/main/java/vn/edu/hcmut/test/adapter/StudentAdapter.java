@@ -44,24 +44,40 @@ public class StudentAdapter extends BaseAdapter {
 //        }
 //    }
 
+    public static class ViewHolder {
+        public TextView txtId, txtName;
+
+        public ViewHolder(View view) {
+            txtId = (TextView) view.findViewById(R.id.txtId);
+            txtName = (TextView) view.findViewById(R.id.txtName);
+        }
+    }
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         Context context = parent.getContext();
 
+        if (convertView == null) {
+
 //        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 //        LayoutInflater inflater = LayoutInflater.from(context);
 //        View view = inflater.inflate(R.layout.student_item, parent, false);
-        convertView = View.inflate(context, R.layout.student_item, null);
+            convertView = View.inflate(context, R.layout.student_item, null);
+            ViewHolder viewHolder = new ViewHolder(convertView);
+            convertView.setTag(viewHolder);
+        }
 
-        TextView txtId = (TextView) convertView.findViewById(R.id.txtId);
-        TextView txtName = (TextView) convertView.findViewById(R.id.txtName);
+        ViewHolder viewHolder = (ViewHolder) convertView.getTag();
+
+//        TextView txtId = (TextView) convertView.findViewById(R.id.txtId);
+//        TextView txtName = (TextView) convertView.findViewById(R.id.txtName);
 
         Student student = students.get(position);
         String id = student.getId();
-        txtId.setText(id);
+        viewHolder.txtId.setText(id);
 
         String name = student.getName();
-        txtName.setText(name);
+        viewHolder.txtName.setText(name);
 
         return convertView;
     }

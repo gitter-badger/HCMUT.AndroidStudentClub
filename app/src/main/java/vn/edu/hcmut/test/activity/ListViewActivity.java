@@ -42,6 +42,10 @@ public class ListViewActivity extends Activity implements AdapterView.OnItemClic
         lvStudents.setOnItemLongClickListener(this);
     }
 
+    public void adb() {
+
+    }
+
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Student student = st.get(position);

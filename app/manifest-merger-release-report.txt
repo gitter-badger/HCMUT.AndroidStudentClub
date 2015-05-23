@@ -29,56 +29,56 @@ MERGED from com.android.support:support-v4:22.0.0:22:5
 		ADDED from AndroidManifest.xml:9:9
 	android:theme
 		ADDED from AndroidManifest.xml:11:9
-activity#vn.edu.hcmut.test.activity.InfoActivity
+activity#vn.edu.hcmut.test.activity.MainActivity
 ADDED from AndroidManifest.xml:13:9
 	android:name
 		ADDED from AndroidManifest.xml:13:19
-activity#vn.edu.hcmut.test.activity.TestActivity
-ADDED from AndroidManifest.xml:15:9
+activity#vn.edu.hcmut.test.activity.ListView1Activity
+ADDED from AndroidManifest.xml:17:9
 	android:name
-		ADDED from AndroidManifest.xml:15:19
-activity#vn.edu.hcmut.test.activity.MainActivity
+		ADDED from AndroidManifest.xml:17:19
+activity#vn.edu.hcmut.test.activity.ListViewActivity
+ADDED from AndroidManifest.xml:18:9
+	android:name
+		ADDED from AndroidManifest.xml:18:19
+activity#vn.edu.hcmut.test.activity.ListView2Activity
 ADDED from AndroidManifest.xml:19:9
-	android:label
-		ADDED from AndroidManifest.xml:21:13
 	android:name
-		ADDED from AndroidManifest.xml:20:13
+		ADDED from AndroidManifest.xml:19:19
+activity#vn.edu.hcmut.test.activity.ListViewPrefActivity
+ADDED from AndroidManifest.xml:20:9
+	android:name
+		ADDED from AndroidManifest.xml:20:19
+activity#vn.edu.hcmut.test.activity.ListViewSaveActivity
+ADDED from AndroidManifest.xml:21:9
+	android:name
+		ADDED from AndroidManifest.xml:21:19
+activity#vn.edu.hcmut.test.activity.ClubActivity
+ADDED from AndroidManifest.xml:22:9
+	android:name
+		ADDED from AndroidManifest.xml:22:19
+activity#vn.edu.hcmut.week3.AddNewScreen
+ADDED from AndroidManifest.xml:24:9
+	android:name
+		ADDED from AndroidManifest.xml:24:19
+activity#vn.edu.hcmut.week3.ViewScreen
+ADDED from AndroidManifest.xml:25:9
+	android:name
+		ADDED from AndroidManifest.xml:25:19
+activity#vn.edu.hcmut.week3.MainScreen
+ADDED from AndroidManifest.xml:26:9
+	android:name
+		ADDED from AndroidManifest.xml:26:19
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from AndroidManifest.xml:22:13
+ADDED from AndroidManifest.xml:27:13
 action#android.intent.action.MAIN
-ADDED from AndroidManifest.xml:23:17
+ADDED from AndroidManifest.xml:28:17
 	android:name
-		ADDED from AndroidManifest.xml:23:25
+		ADDED from AndroidManifest.xml:28:25
 category#android.intent.category.LAUNCHER
-ADDED from AndroidManifest.xml:24:17
+ADDED from AndroidManifest.xml:29:17
 	android:name
-		ADDED from AndroidManifest.xml:24:27
-activity#vn.edu.hcmut.test.activity.ActivityLifeCycle
-ADDED from AndroidManifest.xml:28:9
-	android:name
-		ADDED from AndroidManifest.xml:28:19
-activity#vn.edu.hcmut.test.activity.DetailActivity
-ADDED from AndroidManifest.xml:32:9
-	android:name
-		ADDED from AndroidManifest.xml:32:19
-intent-filter#android.intent.action.VIEW+android.intent.category.DEFAULT
-ADDED from AndroidManifest.xml:33:13
-action#android.intent.action.VIEW
-ADDED from AndroidManifest.xml:34:17
-	android:name
-		ADDED from AndroidManifest.xml:34:25
-category#android.intent.category.DEFAULT
-ADDED from AndroidManifest.xml:35:17
-	android:name
-		ADDED from AndroidManifest.xml:35:27
-data
-ADDED from AndroidManifest.xml:36:17
-	android:mimeType
-		ADDED from AndroidManifest.xml:36:23
-activity#vn.edu.hcmut.test.activity.ResultActivity
-ADDED from AndroidManifest.xml:40:9
-	android:name
-		ADDED from AndroidManifest.xml:40:19
+		ADDED from AndroidManifest.xml:29:27
 uses-sdk
 INJECTED from AndroidManifest.xml:0:0 reason: use-sdk injection requested
 MERGED from com.android.support:appcompat-v7:22.0.0:20:5
